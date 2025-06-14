@@ -1,9 +1,6 @@
 // src/App.js
 import React, { useState, useEffect } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import Footer from './components/Footer';
-// import logoImage from './assets/logo.svg';
-// import decorationImage from './assets/bg2.svg';
 import LanguageSwitcher from './components/LanguageSwitcher';
 import StoreList from './components/StoreList';
 import MarketplaceList from './components/MarketplaceList';
@@ -12,7 +9,6 @@ import './i18n';
 import axios from 'axios';
 
 const logoImage = '/assets/logo.svg'
-const decorationImage = '/assets/bg2.svg'
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -347,7 +343,7 @@ const Copyright = styled.div`
 `;
 
 function App() {
-  const { t } = useTranslation();
+  const { t, i18n  } = useTranslation();
   const currentYear = new Date().getFullYear();
 // В компоненте App.js, функция компонента App
 const [contactInfo, setContactInfo] = useState({
@@ -365,6 +361,10 @@ useEffect(() => {
     .then(res => setContactInfo(res.data))
     .catch(err => console.error('Error loading contact.json:', err));
 }, []);
+
+useEffect(() => {
+document.title = `JVC | ${t('home.title')}`;
+}, [i18n.language, t]);
 
   return (
     <>
