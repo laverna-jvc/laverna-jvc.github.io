@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "Name": "Amazon",
+    "URL": "https://www.amazon.com"
+  },
+  {
+    "id": 2,
+    "Name": "eBay",
+    "URL": "https://www.ebay.com"
+  }
+]
