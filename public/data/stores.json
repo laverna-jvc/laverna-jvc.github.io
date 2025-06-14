@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "Name": "Vilnius Store",
+    "Country": "lithuania",
+    "Latitude": 54.6872,
+    "Longitude": 25.2797,
+    "Address": "Gedimino pr. 1, Vilnius, Lithuania"
+  },
+  {
+    "id": 2,
+    "Name": "Riga Store",
+    "Country": "latvia",
+    "Latitude": 56.9496,
+    "Longitude": 24.1052,
+    "Address": "Brīvības iela 10, Riga, Latvia"
+  }
+]
