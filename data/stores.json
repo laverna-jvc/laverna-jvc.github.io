@@ -10,5 +10,11 @@
     "Name": "Riga Store",
     "Country": "latvia",
     "Address": "Brīvības iela 10, Riga, Latvia"
+  },
+  {
+    "id": 3,
+    "Name": "Kaunas Audio Shop",
+    "Country": "lithuania",
+    "Address": "BLaisvės al. 20, Kaunas, Lithuania"
   }
 ]
