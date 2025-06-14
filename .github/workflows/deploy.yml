@@ -1,0 +1,30 @@
+name: CI/CD — Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1) Клонируем ваш репозиторий
+      - uses: actions/checkout@v3
+
+      # 2) Устанавливаем Node.js
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      # 3) Ставим зависимости и делаем билд
+      - run: npm ci
+      - run: npm run build
+
+      # 4) Пушим папку build в ветку gh-pages
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./build
