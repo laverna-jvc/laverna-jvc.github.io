@@ -88,11 +88,6 @@ const LanguageOption = styled.div`
   `}
 `;
 
-const LanguageCode = styled.span`
-  font-weight: 600;
-  flex: 0 0 30px;
-`;
-
 const LanguageName = styled.span`
   flex: 1;
 `;
