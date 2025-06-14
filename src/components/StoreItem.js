@@ -71,13 +71,9 @@ const StoreItem = ({ store }) => {
   const storeName = store.Name || 'Unnamed Store';
   const storeAddress = store.Address || 'No address available';
   const storeCountry = store.Country || 'Country not specified';
-  const hasCoordinates = store.Latitude && store.Longitude;
   
   // Generate Google Maps URL - either using coordinates or address for fallback
   const getMapsUrl = () => {
-    if (hasCoordinates) {
-      return `https://maps.google.com/?q=${store.Latitude},${store.Longitude}`;
-    }
     return `https://maps.google.com/?q=${encodeURIComponent(storeAddress)}`;
   };
 
