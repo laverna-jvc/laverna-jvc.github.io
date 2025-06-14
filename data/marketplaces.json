@@ -8,5 +8,10 @@
     "id": 2,
     "Name": "eBay",
     "URL": "https://www.ebay.com"
+  },
+  {
+    "id": 3,
+    "Name": "Walmart",
+    "URL": "https://www.walmart.com/"
   }
 ]
