@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const MarketplaceCard = styled.div`
   padding: 1rem 1.5rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   transition: all 0.2s ease;
   
   &:last-child {

@@ -70,7 +70,7 @@ const BackgroundPattern = styled.div`
 `;
 
 const HeaderContainer = styled.header`
-  padding: 1.5rem 0rem;
+  padding: 1.2rem 0rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -97,11 +97,11 @@ const LogoContainer = styled.div`
 `;
 
 const LogoImage = styled.img`
-  height: 36px;
+  height: 48px;
   width: auto;
   
   @media (max-width: 768px) {
-    height: 28px;
+    height: 36px;
   }
 `;
 
@@ -125,7 +125,7 @@ const SectionTitle = styled.h2`
   backdrop-filter: blur(8px);
   border-radius: 10px 10px 0 0;
   margin: 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 `;
 
 const SectionsContainer = styled.div`
@@ -160,69 +160,262 @@ const Section = styled.section`
 
 const Hero = styled.div`
   display: flex;
+  flex-direction: column;
   position: relative;
   margin-bottom: 0;
   border-radius: 16px;
   overflow: hidden;
   background: #1a1a1a;
   box-shadow: 0 20px 80px rgba(0, 0, 0, 0.1);
+  min-height: 500px;
   
-  @media (max-width: 992px) {
-    flex-direction: column;
+  @media (max-width: 768px) {
+    min-height: 400px;
   }
 `;
 
-const HeroLeftContent = styled.div`
-  position: relative;
-  flex: 0 0 50%;
-  padding: 3rem;
-  background: #1a1a1a;
-  
-  @media (max-width: 992px) {
-    width: 100%;
-    padding: 2.5rem;
-  }
-  
-  @media (max-width: 576px) {
-    padding: 2rem;
-  }
-`;
-
-const HeroRightContent = styled.div`
-  flex: 0 0 50%;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  justify-content: stretch;
-  align-items: stretch;
-  
-  @media (max-width: 992px) {
-    height: 300px;
-  }
-`;
-
-const ImageContainer = styled.div`
-  flex: 1;
-  position: relative;
-  overflow: hidden;
-`;
-
-// Элемент создающий плавный переход справа налево
-const LeftGradientOverlay = styled.div`
+const HeroBackground = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%; /* Ширина области перехода */
+  width: 100%;
   height: 100%;
-  background: linear-gradient(to right, #1a1a1a 0%, rgba(26, 26, 26, 0.9) 30%, rgba(26, 26, 26, 0.7) 60%, rgba(26, 26, 26, 0.5) 75%, rgba(26, 26, 26, 0.3) 85%, rgba(26, 26, 26, 0) 100%);
+  background-image: url(${props => props.$imageUrl});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+`;
+
+// const HeroOverlay = styled.div`
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  // width: 100%;
+  // height: 100%;
+  // background: linear-gradient(
+    // 135deg,
+    // rgba(0, 0, 0, 0.7) 0%,
+    // rgba(0, 0, 0, 0.5) 50%,
+    // rgba(0, 0, 0, 0.3) 100%
+  // );
+  // background: none; // <----------------
+  // z-index: 2;
+// `;
+const HeroOverlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  background: 0;
+  backdrop-filter: blur(3px) saturate(1.2);
+  -webkit-backdrop-filter: blur(3px) saturate(1.2);
+  z-index: 2;
+`;
+
+const HeroContent = styled.div`
+  position: relative;
   z-index: 3;
-  pointer-events: none; /* Чтобы не мешало нажатиям */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: baseline;
+  text-align: left;
+  flex: 1;
+  padding: 2rem 2rem;
+  min-height: 350px;
+  
+  @media (max-width: 768px) {
+    padding: 2rem 1.5rem;
+    min-height: 250px;
+  }
+`;
+
+const HeroTitle = styled.h1`
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: 0;
   
   @media (max-width: 992px) {
-    width: 100%;
-    height: 80px;
-    background: linear-gradient(to bottom, #1a1a1a 0%, rgba(26, 26, 26, 0.9) 30%, rgba(26, 26, 26, 0.7) 60%, rgba(26, 26, 26, 0.5) 75%, rgba(26, 26, 26, 0.3) 85%, rgba(26, 26, 26, 0) 100%);
+    font-size: 3rem;
   }
+  
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+  
+  @media (max-width: 468px) {
+    font-size: 2rem;
+  }
+`;
+
+const HeroSubtitle = styled.h2`
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  
+  // color: rgba(255, 255, 255, 0.85);
+  // font-size: 1rem;
+  // font-weight: 600;
+
+  // margin: 0;
+  // text-shadow: 0 1px 2px rgba(255, 0, 0, 0.3);
+  
+  // background: rgba(255, 0, 0, 0.1);
+  // backdrop-filter: blur(10px);
+  // color: #ff0000;
+  // border: 1px solid rgba(255, 0, 0, 0.3);
+  // border-radius: 100px;
+  // padding: 0.4rem 1rem;
+  
+  
+  @media (max-width: 768px) {
+    font-size: 1.25rem;
+  }
+`;
+
+const HeroSubtitle2 = styled.p`
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  
+  @media (max-width: 768px) {
+    font-size: 1.25rem;
+  }
+`;
+
+const HeroInfoCards = styled.div`
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: auto;
+  
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const InfoCard = styled.div`
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  
+  &:last-child {
+    border-right: none;
+  }
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+  
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+  }
+
+  @media (max-width: 992px) {
+    &:nth-child(2n) {
+      border-right: none;
+    }
+    &:nth-child(3), &:nth-child(4) {
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  @media (max-width: 576px) {
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    
+    &:last-child {
+      border-bottom: none;
+    }
+    &:nth-child(3), &:nth-child(4) {
+      border-top: 0;
+    }
+	&:nth-child(4) {
+		padding-bottom: 2rem;
+	}
+  }
+`;
+
+const InfoCardLabel = styled.div`
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 0.5rem;
+`;
+
+const InfoCardContent = styled.div`
+  color: #fff;
+  font-weight: 500;
+  
+  a {
+    color: #fff;
+    text-decoration: none;
+    
+    &:hover {
+      color: #0066ff;
+    }
+  }
+`;
+
+const SocialLinksContainer = styled.div`
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+`;
+
+const SocialIconLink = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  color: #6c757d;
+  font-size: 1rem;
+  transition: all 0.2s;
+  
+  &:hover {
+	background: rgba(255, 255, 255, 0.2);
+	color: #fff;
+    transform: scale(1.1);
+  }
+  
+  i {
+	color: #fff;
+  }
+  
 `;
 
 const StoreImage = styled.div`
@@ -262,66 +455,6 @@ const SubTitle = styled.p`
   margin: 0;
 `;
 
-const ContactInfoContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 2rem;
-`;
-
-const ContactItem = styled.div`
-  display: flex;
-  gap: 0.75rem;
-  color: rgba(255, 255, 255, 0.9);
-  
-  i {
-    min-width: 20px;
-    font-size: 1.25rem;
-  }
-  
-  a {
-    color: rgba(255, 255, 255, 0.9);
-    text-decoration: none;
-    transition: color 0.2s;
-    display: flex;
-	align-items: center;
-	
-    &:hover {
-      color: #fff;
-      text-decoration: underline;
-    }
-  }
-  
-  span {
-    display: flex;
-	align-items: center;
-  }
-`;
-
-const SocialLinks = styled.div`
-  display: flex;
-  gap: 1rem;
-  margin-top: 1.5rem;
-`;
-
-const SocialLink = styled.a`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  color: white;
-  font-size: 1.1rem;
-  transition: all 0.2s;
-  
-  &:hover {
-    color: #fff;
-    transform: translateY(-2px);
-  }
-`;
-
 const ContentLayout = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -339,7 +472,7 @@ const Copyright = styled.div`
   text-align: center;
   margin-top: 3rem;
   padding-top: 1rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
 `;
 
 function App() {
@@ -382,47 +515,59 @@ document.title = `JVC | ${t('home.title')}`;
         </HeaderContainer>
         
         <MainContent>
-          <Hero>
-            <HeroLeftContent>
-              <TitleContainer>
-                <Title>{t('home.title')}</Title>
-                <SubTitle>{t('home.subTitle')}</SubTitle>
-              </TitleContainer>
-              
-              <ContactInfoContainer>
-                <ContactItem>
-                  <i className="uil uil-map-marker"></i>
-                  <span>{contactInfo.address}</span>
-                </ContactItem>
-                
-                <ContactItem>
-                  <i className="uil uil-envelope"></i>
-                  <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
-                </ContactItem>
-                
-                <ContactItem>
-                  <i className="uil uil-phone-alt"></i>
-                  <span>{contactInfo.phone}</span>
-                </ContactItem>
-                
-				<SocialLinks>
-				  <SocialLink href={contactInfo.facebookUrl} aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+		<Hero>
+		  <HeroBackground $imageUrl={contactInfo.heroImage || null} />
+		  <HeroOverlay />
+		  
+		  <HeroContent>
+			<HeroSubtitle2>{t('home.subTitle2')}</HeroSubtitle2>
+			<HeroTitle>{t('home.title')}</HeroTitle>
+			
+		  </HeroContent>
+		  
+		  <HeroInfoCards>
+			<InfoCard>
+			  <InfoCardLabel>{t('contact.address')}</InfoCardLabel>
+			  <InfoCardContent>{contactInfo.address}</InfoCardContent>
+			</InfoCard>
+			
+			<InfoCard>
+			  <InfoCardLabel>{t('contact.email')}</InfoCardLabel>
+			  <InfoCardContent>
+				<a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
+			  </InfoCardContent>
+			</InfoCard>
+			
+			<InfoCard>
+			  <InfoCardLabel>{t('contact.phone')}</InfoCardLabel>
+			  <InfoCardContent>{contactInfo.phone}</InfoCardContent>
+			</InfoCard>
+			
+			<InfoCard>
+			  <InfoCardLabel>{t('contact.social')}</InfoCardLabel>
+			  <InfoCardContent>
+				<SocialLinksContainer>
+				  <SocialIconLink 
+					href={contactInfo.facebookUrl} 
+					aria-label="Facebook" 
+					target="_blank" 
+					rel="noopener noreferrer"
+				  >
 					<i className="uil uil-facebook-f"></i>
-				  </SocialLink>
-				  <SocialLink href={contactInfo.youtubeUrl} aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+				  </SocialIconLink>
+				  <SocialIconLink 
+					href={contactInfo.youtubeUrl} 
+					aria-label="YouTube" 
+					target="_blank" 
+					rel="noopener noreferrer"
+				  >
 					<i className="uil uil-youtube"></i>
-				  </SocialLink>
-				</SocialLinks>
-              </ContactInfoContainer>
-            </HeroLeftContent>
-            
-            <HeroRightContent>
-              <ImageContainer>
-                <StoreImage $imageUrl={contactInfo.heroImage || null} />
-                <LeftGradientOverlay />
-              </ImageContainer>
-            </HeroRightContent>
-          </Hero>
+				  </SocialIconLink>
+				</SocialLinksContainer>
+			  </InfoCardContent>
+			</InfoCard>
+		  </HeroInfoCards>
+		</Hero>
           
           <ContentLayout>
             <SectionsContainer>
