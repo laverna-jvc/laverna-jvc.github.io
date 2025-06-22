@@ -154,7 +154,7 @@ const Section = styled.section`
   // }
 
   @media (max-width: 768px) {
-    max-height: 500px;
+    max-height: 453px;
   }
 `;
 
@@ -260,36 +260,7 @@ const HeroTitle = styled.h1`
   }
 `;
 
-const HeroSubtitle = styled.h2`
-  color: #fff;
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  
-  // color: rgba(255, 255, 255, 0.85);
-  // font-size: 1rem;
-  // font-weight: 600;
-
-  // margin: 0;
-  // text-shadow: 0 1px 2px rgba(255, 0, 0, 0.3);
-  
-  // background: rgba(255, 0, 0, 0.1);
-  // backdrop-filter: blur(10px);
-  // color: #ff0000;
-  // border: 1px solid rgba(255, 0, 0, 0.3);
-  // border-radius: 100px;
-  // padding: 0.4rem 1rem;
-  
-  
-  @media (max-width: 768px) {
-    font-size: 1.25rem;
-  }
-`;
-
-const HeroSubtitle2 = styled.p`
+const HeroSubtitle = styled.p`
   color: rgba(255, 255, 255, 0.8);
   font-size: 2rem;
   font-weight: 600;
@@ -418,43 +389,6 @@ const SocialIconLink = styled.a`
   
 `;
 
-const StoreImage = styled.div`
-  width: 100%;
-  height: 100%;
-  background-image: url(${props => props.$imageUrl});
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-`;
-
-const TitleContainer = styled.div`
-  margin-bottom: 4rem;
-`;
-
-const Title = styled.h1`
-  color: #fff;
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-  
-  @media (max-width: 768px) {
-    font-size: 2rem;
-  }
-  
-  @media (max-width: 468px) {
-    font-size: 1.8rem;
-  }
-`;
-
-const SubTitle = styled.p`
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 1.25rem;
-  font-weight: 400;
-  margin: 0;
-`;
-
 const ContentLayout = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -520,7 +454,7 @@ document.title = `JVC | ${t('home.title')}`;
 		  <HeroOverlay />
 		  
 		  <HeroContent>
-			<HeroSubtitle2>{t('home.subTitle2')}</HeroSubtitle2>
+			<HeroSubtitle>{t('home.subTitle')}</HeroSubtitle>
 			<HeroTitle>{t('home.title')}</HeroTitle>
 			
 		  </HeroContent>

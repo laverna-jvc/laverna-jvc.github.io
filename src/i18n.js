@@ -18,8 +18,7 @@ const enTranslation = {
   },
   "home": {
     "title": "Official Distributor in Lithuania and Latvia",
-	"subTitle": "in Lithuania and Latvia",
-	"subTitle2": "Laverna company",
+	"subTitle": "Laverna company",
     "welcome": "Welcome to the official website of JVC distributor"
   },
   "stores": {
@@ -60,8 +59,7 @@ const ltTranslation = {
   },
   "home": {
     "title": "Oficialus distributorius Lietuvoje ir Latvijoje",
-	"subTitle": "Lietuvoje ir Latvijoje",
-	"subTitle2": "Firma Laverna",
+	"subTitle": "Firma Laverna",
     "welcome": "Sveiki atvykę į oficialią JVC distributoriaus svetainę"
   },
   "stores": {
@@ -102,8 +100,7 @@ const lvTranslation = {
   },
   "home": {
     "title": "Oficiālais izplatītājs Lietuvā un Latvijā",
-	"subTitle": "Lietuvā un Latvijā",
-	"subTitle2": "Laverna uzņēmums",
+	"subTitle": "Laverna uzņēmums",
     "welcome": "Laipni lūdzam JVC izplatītāja oficiālajā vietnē"
   },
   "stores": {
