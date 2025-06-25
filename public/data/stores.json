@@ -42,6 +42,12 @@
     "Address": "J. Basanavičiaus g. 95D, Kėdainiai, Lithuania"
   },
   {
+    "id": 8,
+    "Name": "Klaipėda Signalo centras",
+    "Country": "lithuania",
+    "Address": "Birutės g. 2, Klaipėda, Lithuania"
+  },
+  {
     "id": 9,
     "Name": "Panevėžys Sirenitas",
     "Country": "lithuania",
