@@ -28,5 +28,15 @@
     "id": 6,
     "Name": "Rekija",
     "URL": "https://e-rekija.lt/automobiliu-garso-iranga/"
-  }
+  },
+  {
+    "id": 7,
+    "Name": "Enrikė",
+    "URL": "https://www.enrike.lt/"
+  },
+  {
+    "id": 8,
+    "Name": "AUX",
+    "URL": "https://www.aux.lv/"
+  },
 ]
