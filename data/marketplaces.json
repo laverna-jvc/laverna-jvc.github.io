@@ -1,32 +1,32 @@
 [
   {
     "id": 1,
-    "Name": "Amazon",
-    "URL": "https://www.amazon.com"
+    "Name": "LaviShop",
+    "URL": "https://www.LaviShop.lt"
   },
   {
     "id": 2,
-    "Name": "eBay",
-    "URL": "https://www.ebay.com"
+    "Name": "GerosKainos",
+    "URL": "https://www.GerosKainos.lt"
   },
   {
     "id": 3,
-    "Name": "Walmart",
-    "URL": "https://www.walmart.com/"
+    "Name": "Varle",
+    "URL": "https://www.Varle.lt/"
   },
   {
     "id": 4,
-    "Name": "Walmart2",
-    "URL": "https://www.walmart.com/"
+    "Name": "Autogarsas",
+    "URL": "https://www.autogarsas.lt/"
   },
   {
     "id": 5,
-    "Name": "Walmart3",
-    "URL": "https://www.walmart.com/"
+    "Name": "Autoaudio",
+    "URL": "https://www.autoaudio.lt/"
   },
   {
     "id": 6,
-    "Name": "Walmart4",
-    "URL": "https://www.walmart.com/"
+    "Name": "Rekija",
+    "URL": "https://e-rekija.lt/automobiliu-garso-iranga/"
   }
 ]
