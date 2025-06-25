@@ -498,15 +498,33 @@ useEffect(() => {
 document.title = `JVC | ${t('home.subTitle2')}`;
 }, [i18n.language, t]);
 
+// useEffect(() => {
+  // const params = new URLSearchParams(window.location.search);
+  // const lang = params.get('lang');
+  // const supportedLanguages = ['lt', 'en', 'lv'];
+
+  // if (lang && supportedLanguages.includes(lang) && lang !== i18n.language) {
+    // i18n.changeLanguage(lang);
+  // }
+// }, []);
 useEffect(() => {
   const params = new URLSearchParams(window.location.search);
-  const lang = params.get('lang');
-  const supportedLanguages = ['lt', 'en', 'lv'];
+  const urlLang = params.get('lang');
+  const host = window.location.hostname;
 
-  if (lang && supportedLanguages.includes(lang) && lang !== i18n.language) {
-    i18n.changeLanguage(lang);
+  const supportedLanguages = ['lt', 'lv', 'en'];
+
+  if (urlLang && supportedLanguages.includes(urlLang)) {
+    i18n.changeLanguage(urlLang);
+  } else {
+    if (host.includes('jvc.lv')) {
+      i18n.changeLanguage('lv');
+    } else if (host.includes('jvc.lt')) {
+      i18n.changeLanguage('lt');
+    }
   }
-}, []);
+}, [i18n]);
+
 
   return (
     <>
