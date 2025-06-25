@@ -18,14 +18,15 @@ const LanguageSelector = styled.div`
   user-select: none;
   font-size: 0.85rem;
   transition: all 0.2s;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.04);
+  // box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid #dbdee4; // rgba(0, 0, 0, 0.06);
   font-weight: 500;
   
   &:hover {
     background: #fff;
     transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    // box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+	border: 1px solid #dbdee4;
   }
 `;
 
@@ -115,10 +116,14 @@ const LanguageSwitcher = () => {
     setIsOpen(!isOpen);
   };
 
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-    setIsOpen(false);
-  };
+const changeLanguage = (lng) => {
+  i18n.changeLanguage(lng);
+  setIsOpen(false);
+
+  const url = new URL(window.location.href);
+  url.searchParams.set('lang', lng);
+  window.history.replaceState(null, '', url.toString());
+};
 
   // Close dropdown when clicking outside
   useEffect(() => {

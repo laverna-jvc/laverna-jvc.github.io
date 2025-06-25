@@ -79,7 +79,8 @@ const HeaderContainer = styled.header`
   top: 0;
   z-index: 100;
   background-color: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  // box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid #dbdee4;
 `;
 
 const Header = styled.div`
@@ -89,6 +90,7 @@ const Header = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0 2rem;
+  gap: 1.5rem;
 `;
 
 const LogoContainer = styled.div`
@@ -133,14 +135,21 @@ const SectionsContainer = styled.div`
   flex-direction: column;
   gap: 2rem;
   width: 100%;
-  margin-top: 2rem;
+  margin-top: 4rem;
+  
+  @media (max-width: 992px) {
+    &:last-child {
+		margin-top: 2rem;
+	}
+  }
 `;
 
 const Section = styled.section`
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(10px);
   border-radius: 10px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  // box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid #dbdee4;
   overflow: hidden;
   transition: all 0.3s ease;
   display: flex;
@@ -163,15 +172,15 @@ const Hero = styled.div`
   flex-direction: column;
   position: relative;
   margin-bottom: 0;
-  border-radius: 16px;
+  border-radius: 16px;border-radius: 32px;
   overflow: hidden;
   background: #1a1a1a;
   box-shadow: 0 20px 80px rgba(0, 0, 0, 0.1);
-  min-height: 500px;
+  // min-height: 500px;
   
-  @media (max-width: 768px) {
-    min-height: 400px;
-  }
+  // @media (max-width: 768px) {
+    // min-height: 400px;
+  // }
 `;
 
 const HeroBackground = styled.div`
@@ -215,8 +224,8 @@ const HeroOverlay = styled.div`
     rgba(0, 0, 0, 0.2) 100%
   );
   background: 0;
-  backdrop-filter: blur(3px) saturate(1.2);
-  -webkit-backdrop-filter: blur(3px) saturate(1.2);
+  backdrop-filter: blur(10px) saturate(1.2);
+  -webkit-backdrop-filter: blur(10px) saturate(1.2);
   z-index: 2;
 `;
 
@@ -229,16 +238,64 @@ const HeroContent = styled.div`
   align-items: baseline;
   text-align: left;
   flex: 1;
-  padding: 2rem 2rem;
-  min-height: 350px;
+  padding: 4rem;
+  border-radius: 15px;
+  // min-height: 350px;
   
   @media (max-width: 768px) {
-    padding: 2rem 1.5rem;
-    min-height: 250px;
+    padding: 2.5rem;
+  }
+  
+  @media (max-width: 350px) {
+    padding: 2rem;
+  }
+  
+  @media (max-width: 300px) {
+    padding: 1.5rem;
   }
 `;
 
 const HeroTitle = styled.h1`
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: 0;
+  margin-bottom: 0.5rem;
+  // background: #0066ff;
+  // border-radius: 15px;
+  // padding: 0.5rem 0.8rem;
+  position: relative;
+
+  &:before{
+    content:"";
+    background-color: #ff4242;
+    width:100%;
+    height:1.25em;
+    position:absolute;
+    z-index:-1;
+    filter:url(#marker-shape);
+    left:-0.25em;border-radius: 5px;
+    top:-0.1em;
+    padding: 0 0.25em;
+  }
+
+  @media (max-width: 992px) {
+    font-size: 1.5rem;
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 1.4rem;
+  }
+  
+  @media (max-width: 468px) {
+    font-size: 1.3rem;
+  }
+`;
+
+const HeroTitle2 = styled.h1`
   color: #fff;
   font-size: 2.5rem;
   font-weight: 700;
@@ -248,24 +305,26 @@ const HeroTitle = styled.h1`
   margin-bottom: 0;
   
   @media (max-width: 992px) {
-    font-size: 3rem;
+    font-size: 2rem;
   }
   
   @media (max-width: 768px) {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
   }
   
   @media (max-width: 468px) {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
 `;
 
+
 const HeroSubtitle = styled.p`
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 2rem;
-  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);color: #fff;
+  font-size: 1.5rem;
+  font-weight: 400;
   margin: 0;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  margin-top: 2rem;
   
   @media (max-width: 768px) {
     font-size: 1.25rem;
@@ -278,7 +337,9 @@ const HeroInfoCards = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0;
-  margin-top: auto;
+  margin-top: 2rem;
+  border: 1px solid #dbdee4;
+  // box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
   
   @media (max-width: 992px) {
     grid-template-columns: repeat(2, 1fr);
@@ -290,12 +351,13 @@ const HeroInfoCards = styled.div`
 `;
 
 const InfoCard = styled.div`
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  // background: rgba(255, 255, 255, 0.1);
+  // backdrop-filter: blur(10px);
+  background: #fff;
   padding: 1.5rem 2rem;
   display: flex;
   flex-direction: column;
-  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  border-right: 1px solid #dbdee4;
   transition: all 0.3s ease;
   
   &:last-child {
@@ -303,7 +365,7 @@ const InfoCard = styled.div`
   }
   
   &:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: #fff;
   }
   
   @media (max-width: 768px) {
@@ -341,15 +403,16 @@ const InfoCardLabel = styled.div`
   text-transform: uppercase;
   letter-spacing: 1px;
   color: rgba(255, 255, 255, 0.6);
+  color: #6c757d;
   margin-bottom: 0.5rem;
 `;
 
 const InfoCardContent = styled.div`
-  color: #fff;
+  color: #212529;
   font-weight: 500;
   
   a {
-    color: #fff;
+    color: #212529;
     text-decoration: none;
     
     &:hover {
@@ -361,32 +424,34 @@ const InfoCardContent = styled.div`
 const SocialLinksContainer = styled.div`
   display: flex;
   gap: 0.75rem;
-  margin-top: 0.5rem;
+  // margin-bottom: 0.5rem;
 `;
 
 const SocialIconLink = styled.a`
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: start;
+  justify-content: start;
   width: 32px;
   height: 32px;
-  background: rgba(255, 255, 255, 0.1);
+  // background: rgba(0, 0, 0, 0.06);
   backdrop-filter: blur(10px);
   border-radius: 50%;
-  color: #6c757d;
-  font-size: 1rem;
+  color: #212529;
+  font-size: 1.2rem;
   transition: all 0.2s;
   
   &:hover {
-	background: rgba(255, 255, 255, 0.2);
-	color: #fff;
-    transform: scale(1.1);
+	// background: rgba(0, 0, 0, 0.1);
+	color: #0066ff;
   }
   
   i {
-	color: #fff;
+	color: #212529;
+	transition: all 0.2s;
   }
-  
+  i:hover {
+	color: #0066ff;
+  }
 `;
 
 const ContentLayout = styled.div`
@@ -404,9 +469,9 @@ const Copyright = styled.div`
   color: #6c757d;
   font-size: 0.9rem;
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 2rem;
   padding-top: 1rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-top: 0px solid rgba(0, 0, 0, 0.06);
 `;
 
 function App() {
@@ -430,8 +495,18 @@ useEffect(() => {
 }, []);
 
 useEffect(() => {
-document.title = `JVC | ${t('home.title')}`;
+document.title = `JVC | ${t('home.subTitle2')}`;
 }, [i18n.language, t]);
+
+useEffect(() => {
+  const params = new URLSearchParams(window.location.search);
+  const lang = params.get('lang');
+  const supportedLanguages = ['lt', 'en', 'lv'];
+
+  if (lang && supportedLanguages.includes(lang) && lang !== i18n.language) {
+    i18n.changeLanguage(lang);
+  }
+}, []);
 
   return (
     <>
@@ -454,11 +529,13 @@ document.title = `JVC | ${t('home.title')}`;
 		  <HeroOverlay />
 		  
 		  <HeroContent>
-			<HeroSubtitle>{t('home.subTitle')}</HeroSubtitle>
 			<HeroTitle>{t('home.title')}</HeroTitle>
-			
+			<HeroTitle2>{t('home.subTitle2')}</HeroTitle2>
+			<HeroSubtitle>{t('home.subTitle')}</HeroSubtitle>
 		  </HeroContent>
 		  
+		</Hero>
+
 		  <HeroInfoCards>
 			<InfoCard>
 			  <InfoCardLabel>{t('contact.address')}</InfoCardLabel>
@@ -501,8 +578,7 @@ document.title = `JVC | ${t('home.title')}`;
 			  </InfoCardContent>
 			</InfoCard>
 		  </HeroInfoCards>
-		</Hero>
-          
+		  
           <ContentLayout>
             <SectionsContainer>
               <Section>
