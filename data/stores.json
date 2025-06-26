@@ -1,66 +1,55 @@
 [
   {
-    "id": 1,
     "Name": "Kaunas Laverna",
     "Country": "lithuania",
     "Address": "Taikos pr. 92C, Kaunas, Lithuania"
   },
   {
-    "id": 2,
     "Name": "Riga Aux",
     "Country": "latvia",
     "Address": "Ludzas iela 9, Riga, Latvia"
   },
   {
-    "id": 3,
     "Name": "Kaunas Autogarsas",
     "Country": "lithuania",
     "Address": "Armatūrininkų g.1, Kaunas, Lithuania"
   },
   {
-    "id": 4,
     "Name": "Klaipėda Rekauta",
     "Country": "lithuania",
     "Address": "Bijūnų g. 10A, Klaipėda, Lithuania"
   },
   {
-    "id": 5,
     "Name": "Vilnius Spikare",
     "Country": "lithuania",
     "Address": "Ukmergės g. 222, Vilnius, Lithuania"
   },
   {
-    "id": 6,
     "Name": "Kaunas Spikare",
     "Country": "lithuania",
     "Address": "Savanorių pr. 241, Kaunas, Lithuania"
   },
   {
-    "id": 7,
     "Name": "Kėdainiai Enrikė",
     "Country": "lithuania",
     "Address": "J. Basanavičiaus g. 95D, Kėdainiai, Lithuania"
   },
   {
-    "id": 8,
     "Name": "Klaipėda Signalo centras",
     "Country": "lithuania",
     "Address": "Birutės g. 2, Klaipėda, Lithuania"
   },
   {
-    "id": 9,
     "Name": "Panevėžys Sirenitas",
     "Country": "lithuania",
     "Address": "Ukmergės g. 13, Panevėžys, Lithuania"
   },
   {
-    "id": 10,
     "Name": "Kaunas Sirenitas",
     "Country": "lithuania",
     "Address": "Algirdo g. 2, Kaunas, Lithuania"
   },
   {
-    "id": 11,
     "Name": "Utena Sirenitas",
     "Country": "lithuania",
     "Address": "Aušros g. 63, Utena, Lithuania"
