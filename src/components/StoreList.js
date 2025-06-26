@@ -38,8 +38,9 @@ const EmptyState = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 3rem 2rem;
+  padding: 1rem 2rem;
   color: #6c757d;
+  flex: 1;
   
   i {
     font-size: 2.5rem;
@@ -49,6 +50,7 @@ const EmptyState = styled.div`
   
   p {
     font-size: 0.95rem;
+	margin: 0;
   }
 `;
 
@@ -107,11 +109,11 @@ const StoreList = () => {
 
         if (currentLang === 'lt') {
           filteredStores = response.data.filter(store =>
-            store.Country && store.Country.toLowerCase().includes('lithuania')
+            store.Country && store.Country.toLowerCase().includes('lt')
           );
         } else if (currentLang === 'lv') {
           filteredStores = response.data.filter(store =>
-            store.Country && store.Country.toLowerCase().includes('latvia')
+            store.Country && store.Country.toLowerCase().includes('lv')
           );
         }
 
@@ -168,9 +170,12 @@ const StoreList = () => {
 
   return (
     <StoresContainer>
-      {stores.map((store) => (
-        <StoreItem key={store.id} store={store} />
-      ))}
+		{stores.map((store, index) => (
+		  <StoreItem
+			key={`${store.Name}-${store.Address}-${index}`}
+			store={store}
+		  />
+		))}
     </StoresContainer>
   );
 };

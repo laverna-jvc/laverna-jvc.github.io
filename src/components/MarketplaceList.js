@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import MarketplaceItem from './MarketplaceItem';
 import axios from 'axios';
+import { useTranslation } from 'react-i18next';
 
 const MarketplacesContainer = styled.div`
   flex: 1; // Занимает все доступное пространство
@@ -36,8 +37,9 @@ const EmptyState = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 3rem 2rem;
+  padding: 1rem 2rem;
   color: #6c757d;
+  flex: 1;
   
   i {
     font-size: 2.5rem;
@@ -47,6 +49,7 @@ const EmptyState = styled.div`
   
   p {
     font-size: 0.95rem;
+	margin: 0;
   }
 `;
 
@@ -87,6 +90,7 @@ const LoadingAnimation = styled.div`
 `;
 
 const MarketplaceList = () => {
+  const { i18n } = useTranslation();
   const [marketplaces, setMarketplaces] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -99,7 +103,20 @@ const MarketplaceList = () => {
         const response = await axios.get('/data/marketplaces.json');
         console.log('Marketplaces data from JSON:', response.data);
 		
-        let filteredMarketplaces = response.data;
+		// Фильтрация по языку
+		const currentLang = i18n.language;
+		let filteredMarketplaces = response.data;
+
+		if (currentLang === 'lt') {
+		  filteredMarketplaces = response.data.filter(item =>
+			item.Country && item.Country.toLowerCase().includes('lt')
+		  );
+		} else if (currentLang === 'lv') {
+		  filteredMarketplaces = response.data.filter(item =>
+			item.Country && item.Country.toLowerCase().includes('lv')
+		  );
+		}
+
 		// Сортировка по Name (по алфавиту)
 		filteredMarketplaces.sort((a, b) => {
 		  const nameA = (a.Name || '').toLowerCase();
@@ -118,7 +135,7 @@ const MarketplaceList = () => {
     };
 
     fetchMarketplaces();
-  }, []);
+  }, [i18n.language]);
 
   if (loading) {
     return (
@@ -147,9 +164,12 @@ const MarketplaceList = () => {
 
   return (
     <MarketplacesContainer>
-      {marketplaces.map((marketplace) => (
-        <MarketplaceItem key={marketplace.id} marketplace={marketplace} />
-      ))}
+		{marketplaces.map((marketplace, index) => (
+		  <MarketplaceItem
+			key={`${marketplace.Name}-${index}`}
+			marketplace={marketplace}
+		  />
+		))}
     </MarketplacesContainer>
   );
 };

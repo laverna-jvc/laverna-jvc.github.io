@@ -1,57 +1,57 @@
 [
   {
     "Name": "Kaunas Laverna",
-    "Country": "lithuania",
+    "Country": "lt",
     "Address": "Taikos pr. 92C, Kaunas, Lithuania"
   },
   {
     "Name": "Riga Aux",
-    "Country": "latvia",
+    "Country": "lv",
     "Address": "Ludzas iela 9, Riga, Latvia"
   },
   {
     "Name": "Kaunas Autogarsas",
-    "Country": "lithuania",
+    "Country": "lt",
     "Address": "Armatūrininkų g.1, Kaunas, Lithuania"
   },
   {
     "Name": "Klaipėda Rekauta",
-    "Country": "lithuania",
+    "Country": "lt",
     "Address": "Bijūnų g. 10A, Klaipėda, Lithuania"
   },
   {
     "Name": "Vilnius Spikare",
-    "Country": "lithuania",
+    "Country": "lt",
     "Address": "Ukmergės g. 222, Vilnius, Lithuania"
   },
   {
     "Name": "Kaunas Spikare",
-    "Country": "lithuania",
+    "Country": "lt",
     "Address": "Savanorių pr. 241, Kaunas, Lithuania"
   },
   {
     "Name": "Kėdainiai Enrikė",
-    "Country": "lithuania",
+    "Country": "lt",
     "Address": "J. Basanavičiaus g. 95D, Kėdainiai, Lithuania"
   },
   {
     "Name": "Klaipėda Signalo centras",
-    "Country": "lithuania",
+    "Country": "lt",
     "Address": "Birutės g. 2, Klaipėda, Lithuania"
   },
   {
     "Name": "Panevėžys Sirenitas",
-    "Country": "lithuania",
+    "Country": "lt",
     "Address": "Ukmergės g. 13, Panevėžys, Lithuania"
   },
   {
     "Name": "Kaunas Sirenitas",
-    "Country": "lithuania",
+    "Country": "lt",
     "Address": "Algirdo g. 2, Kaunas, Lithuania"
   },
   {
     "Name": "Utena Sirenitas",
-    "Country": "lithuania",
+    "Country": "lt",
     "Address": "Aušros g. 63, Utena, Lithuania"
   }
  ]

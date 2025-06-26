@@ -40,7 +40,7 @@ const StoreName = styled.h3`
 const StoreAddress = styled.a`
   font-size: 0.9rem;
   display: flex;
-  align-items: center;
+  align-items: start;
   gap: 0.25rem;
   text-decoration: none;
   color: #6c757d;
