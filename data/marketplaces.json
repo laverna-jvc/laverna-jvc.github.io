@@ -1,34 +1,42 @@
 [
   {
     "Name": "LaviShop",
+    "Country": "lt",
     "URL": "https://www.LaviShop.lt"
   },
   {
     "Name": "GerosKainos",
+    "Country": "lt",
     "URL": "https://www.GerosKainos.lt"
   },
   {
     "Name": "Varle",
+    "Country": "lt",
     "URL": "https://www.Varle.lt/"
   },
   {
     "Name": "Autogarsas",
+    "Country": "lt",
     "URL": "https://www.autogarsas.lt/"
   },
   {
     "Name": "Autoaudio",
+    "Country": "lt",
     "URL": "https://www.autoaudio.lt/"
   },
   {
     "Name": "Rekija",
+    "Country": "lt",
     "URL": "https://e-rekija.lt/automobiliu-garso-iranga/"
   },
   {
     "Name": "Enrikė",
+    "Country": "lt",
     "URL": "https://www.enrike.lt/"
   },
   {
     "Name": "AUX",
+    "Country": "lv",
     "URL": "https://www.aux.lv/"
   }
 ]
