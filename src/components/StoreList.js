@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import StoreItem from './StoreItem';
 import axios from 'axios';
+import { useTranslation } from 'react-i18next'; // в начало файла
+
 
 const StoresContainer = styled.div`
   flex: 1; // Занимает все доступное пространство
@@ -87,6 +89,7 @@ const LoadingAnimation = styled.div`
 `;
 
 const StoreList = () => {
+  const { i18n } = useTranslation();
   const [stores, setStores] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -98,7 +101,35 @@ const StoreList = () => {
       try {
         const response = await axios.get('/data/stores.json');
         console.log('Stores data from JSON:', response.data);
-        setStores(response.data);
+
+        const currentLang = i18n.language;
+        let filteredStores = response.data;
+
+        if (currentLang === 'lt') {
+          filteredStores = response.data.filter(store =>
+            store.Country && store.Country.toLowerCase().includes('lithuania')
+          );
+        } else if (currentLang === 'lv') {
+          filteredStores = response.data.filter(store =>
+            store.Country && store.Country.toLowerCase().includes('latvia')
+          );
+        }
+
+        // setStores(filteredStores);
+		// Сортировка: сначала по City, затем по Name
+		filteredStores.sort((a, b) => {
+		  const cityA = (a.City || '').toLowerCase();
+		  const cityB = (b.City || '').toLowerCase();
+		  if (cityA < cityB) return -1;
+		  if (cityA > cityB) return 1;
+
+		  const nameA = (a.Name || '').toLowerCase();
+		  const nameB = (b.Name || '').toLowerCase();
+		  return nameA.localeCompare(nameB);
+		});
+		setStores(filteredStores);
+		
+		
       } catch (err) {
         console.error("Error fetching stores:", err);
         setError(`Failed to load stores: ${err.message}`);
@@ -108,7 +139,7 @@ const StoreList = () => {
     };
 
     fetchStores();
-  }, []);
+  }, [i18n.language]);
 
   if (loading) {
     return (

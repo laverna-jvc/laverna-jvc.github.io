@@ -23,7 +23,7 @@ const enTranslation = {
     "welcome": "Welcome to the official website of JVC distributor"
   },
   "stores": {
-    "title": "Our Stores",
+    "title": "Retail locations",
     "address": "Address",
     "phone": "Phone",
     "viewOnMap": "View on Map"
@@ -65,7 +65,7 @@ const ltTranslation = {
     "welcome": "Sveiki atvykę į oficialią JVC distributoriaus svetainę"
   },
   "stores": {
-    "title": "Mūsų parduotuvės",
+    "title": "Prekybos vietos",
     "address": "Adresas",
     "phone": "Telefonas",
 	"viewOnMap": "Peržiūrėti žemėlapyje"
@@ -107,7 +107,7 @@ const lvTranslation = {
     "welcome": "Laipni lūdzam JVC izplatītāja oficiālajā vietnē"
   },
   "stores": {
-    "title": "Mūsu veikali",
+    "title": "Tirdzniecības vietas",
     "address": "Adrese",
     "phone": "Tālrunis",
 	"viewOnMap": "Skatīt kartē"

@@ -70,16 +70,18 @@ const BackgroundPattern = styled.div`
 `;
 
 const HeaderContainer = styled.header`
-  padding: 1.2rem 0rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(8px);
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 100;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  // padding: 1.2rem 0rem;
+  height: 80px;
   background-color: rgba(255, 255, 255, 0.8);
-  // box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(8px);
   border-bottom: 1px solid #dbdee4;
 `;
 
@@ -110,7 +112,9 @@ const LogoImage = styled.img`
 const MainContent = styled.main`
   flex: 1;
   padding: 2rem;
+  padding-top: 7.4rem;
   padding-bottom: 1rem;
+  padding-top: calc(2rem + 80px);
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
@@ -483,16 +487,23 @@ const [contactInfo, setContactInfo] = useState({
   email: '-',
   phone: '-',
   heroImage: null,
-  facebookUrl: '#',
+  instagramUrl: '#',
   youtubeUrl: '#'
 });
 
 // Обновляем функцию fetchContactInfo в useEffect
 useEffect(() => {
+  const language = i18n.language || 'lt';
   axios.get('/data/contact.json')
-    .then(res => setContactInfo(res.data))
-    .catch(err => console.error('Error loading contact.json:', err));
-}, []);
+    .then(res => {
+      // если нет данных по текущему языку, fallback на en
+      const data = res.data[language] || res.data['en'];
+      setContactInfo(data);
+    })
+    .catch(err => {
+      console.error('Error loading contact.json:', err);
+    });
+}, [i18n.language]);
 
 useEffect(() => {
 document.title = `JVC | ${t('home.subTitle2')}`;
@@ -577,12 +588,12 @@ useEffect(() => {
 			  <InfoCardContent>
 				<SocialLinksContainer>
 				  <SocialIconLink 
-					href={contactInfo.facebookUrl} 
-					aria-label="Facebook" 
+					href={contactInfo.instagramUrl} 
+					aria-label="Instagram" 
 					target="_blank" 
 					rel="noopener noreferrer"
 				  >
-					<i className="uil uil-facebook-f"></i>
+					<i className="uil uil-instagram"></i>
 				  </SocialIconLink>
 				  <SocialIconLink 
 					href={contactInfo.youtubeUrl} 

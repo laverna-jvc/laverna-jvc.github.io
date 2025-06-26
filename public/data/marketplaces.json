@@ -1,41 +1,33 @@
 [
   {
-    "id": 1,
     "Name": "LaviShop",
     "URL": "https://www.LaviShop.lt"
   },
   {
-    "id": 2,
     "Name": "GerosKainos",
     "URL": "https://www.GerosKainos.lt"
   },
   {
-    "id": 3,
     "Name": "Varle",
     "URL": "https://www.Varle.lt/"
   },
   {
-    "id": 4,
     "Name": "Autogarsas",
     "URL": "https://www.autogarsas.lt/"
   },
   {
-    "id": 5,
     "Name": "Autoaudio",
     "URL": "https://www.autoaudio.lt/"
   },
   {
-    "id": 6,
     "Name": "Rekija",
     "URL": "https://e-rekija.lt/automobiliu-garso-iranga/"
   },
   {
-    "id": 7,
     "Name": "Enrikė",
     "URL": "https://www.enrike.lt/"
   },
   {
-    "id": 8,
     "Name": "AUX",
     "URL": "https://www.aux.lv/"
   }

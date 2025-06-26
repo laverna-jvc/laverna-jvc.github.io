@@ -98,7 +98,17 @@ const MarketplaceList = () => {
       try {
         const response = await axios.get('/data/marketplaces.json');
         console.log('Marketplaces data from JSON:', response.data);
-        setMarketplaces(response.data);
+		
+        let filteredMarketplaces = response.data;
+		// Сортировка по Name (по алфавиту)
+		filteredMarketplaces.sort((a, b) => {
+		  const nameA = (a.Name || '').toLowerCase();
+		  const nameB = (b.Name || '').toLowerCase();
+		  return nameA.localeCompare(nameB);
+		});
+
+		setMarketplaces(filteredMarketplaces);
+		
       } catch (err) {
         console.error("Error fetching marketplaces:", err);
         setError(`Failed to load online stores: ${err.message}`);
