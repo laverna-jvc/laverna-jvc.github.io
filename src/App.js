@@ -7,6 +7,7 @@ import MarketplaceList from './components/MarketplaceList';
 import { useTranslation } from 'react-i18next';
 import './i18n';
 import axios from 'axios';
+import { MapPin, Phone, Envelope, At } from "@phosphor-icons/react";
 
 const logoImage = '/assets/logo.svg'
 
@@ -339,7 +340,7 @@ const HeroInfoCards = styled.div`
   position: relative;
   z-index: 3;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 0;
   margin-top: 2rem;
   border: 1px solid #dbdee4;
@@ -360,10 +361,15 @@ const InfoCard = styled.div`
   background: #fff;
   padding: 1.5rem 2rem;
   display: flex;
-  flex-direction: column;
+  justify-content: start;
+  align-items: center;
   border-right: 1px solid #dbdee4;
+  // border-top: 1px solid #dbdee4;
   transition: all 0.3s ease;
   
+&:nth-child(3), &:nth-child(4) {
+  border-top: 1px solid #dbdee4;
+}
   &:last-child {
     border-right: none;
   }
@@ -374,20 +380,20 @@ const InfoCard = styled.div`
   
   @media (max-width: 768px) {
     padding: 1.5rem;
+	
   }
 
   @media (max-width: 992px) {
     &:nth-child(2n) {
       border-right: none;
+	  
     }
-    &:nth-child(3), &:nth-child(4) {
-      border-top: 1px solid rgba(0, 0, 0, 0.1);
-    }
+
   }
   
   @media (max-width: 576px) {
     border-right: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #dbdee4;
     
     &:last-child {
       border-bottom: none;
@@ -399,6 +405,35 @@ const InfoCard = styled.div`
 		padding-bottom: 2rem;
 	}
   }
+`;
+
+const InfoCardRight = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const InfoCardIcon = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-right: 1.5rem;
+  color: #ff4242;
+
+  svg {
+	height: 48px;
+	width: 48px;
+  }
+
+  @media (max-width: 576px) {
+	// padding-right: 1rem;
+	
+    svg {
+	  height: 32px;
+	  width: 32px;
+    }
+
+  }
+
+
 `;
 
 const InfoCardLabel = styled.div`
@@ -567,44 +602,56 @@ useEffect(() => {
 
 		  <HeroInfoCards>
 			<InfoCard>
-			  <InfoCardLabel>{t('contact.address')}</InfoCardLabel>
-			  <InfoCardContent>{contactInfo.address}</InfoCardContent>
+				<InfoCardIcon><MapPin weight="thin" /></InfoCardIcon>
+				<InfoCardRight>
+					<InfoCardLabel>{t('contact.address')}</InfoCardLabel>
+					<InfoCardContent>{contactInfo.address}</InfoCardContent>
+				</InfoCardRight>
 			</InfoCard>
 			
 			<InfoCard>
-			  <InfoCardLabel>{t('contact.email')}</InfoCardLabel>
-			  <InfoCardContent>
-				<a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
-			  </InfoCardContent>
+				<InfoCardIcon><Envelope weight="thin" /></InfoCardIcon>
+				<InfoCardRight>
+					<InfoCardLabel>{t('contact.email')}</InfoCardLabel>
+					<InfoCardContent>
+						<a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
+					</InfoCardContent>
+				</InfoCardRight>
 			</InfoCard>
 			
 			<InfoCard>
-			  <InfoCardLabel>{t('contact.phone')}</InfoCardLabel>
-			  <InfoCardContent>{contactInfo.phone}</InfoCardContent>
+				<InfoCardIcon><Phone weight="thin" /></InfoCardIcon>
+				<InfoCardRight>
+					<InfoCardLabel>{t('contact.phone')}</InfoCardLabel>
+					<InfoCardContent>{contactInfo.phone}</InfoCardContent>
+				</InfoCardRight>
 			</InfoCard>
 			
 			<InfoCard>
-			  <InfoCardLabel>{t('contact.social')}</InfoCardLabel>
-			  <InfoCardContent>
-				<SocialLinksContainer>
-				  <SocialIconLink 
-					href={contactInfo.instagramUrl} 
-					aria-label="Instagram" 
-					target="_blank" 
-					rel="noopener noreferrer"
-				  >
-					<i className="uil uil-instagram"></i>
-				  </SocialIconLink>
-				  <SocialIconLink 
-					href={contactInfo.youtubeUrl} 
-					aria-label="YouTube" 
-					target="_blank" 
-					rel="noopener noreferrer"
-				  >
-					<i className="uil uil-youtube"></i>
-				  </SocialIconLink>
-				</SocialLinksContainer>
-			  </InfoCardContent>
+				<InfoCardIcon><At weight="thin" /></InfoCardIcon>
+				<InfoCardRight>
+					<InfoCardLabel>{t('contact.social')}</InfoCardLabel>
+					<InfoCardContent>
+						<SocialLinksContainer>
+						  <SocialIconLink 
+							href={contactInfo.instagramUrl} 
+							aria-label="Instagram" 
+							target="_blank" 
+							rel="noopener noreferrer"
+						  >
+							<i className="uil uil-instagram"></i>
+						  </SocialIconLink>
+						  <SocialIconLink 
+							href={contactInfo.youtubeUrl} 
+							aria-label="YouTube" 
+							target="_blank" 
+							rel="noopener noreferrer"
+						  >
+							<i className="uil uil-youtube"></i>
+							</SocialIconLink>
+						</SocialLinksContainer>
+					</InfoCardContent>
+				</InfoCardRight>
 			</InfoCard>
 		  </HeroInfoCards>
 		  

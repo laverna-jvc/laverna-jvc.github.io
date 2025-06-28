@@ -2,6 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
+import { MapPin } from "@phosphor-icons/react";
 
 const lithuaniaIcon = '/assets/Lithuania.png';
 const latviaIcon = '/assets/Latvia.png'; 
@@ -49,8 +50,11 @@ const StoreAddress = styled.a`
     text-decoration: underline;
   }
   
-  i {
-    font-size: 0.9rem;
+  svg {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+	margin-top: 2px;
   }
 `;
 
@@ -109,7 +113,7 @@ const StoreItem = ({ store }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="uil uil-map-marker"></i>
+          <MapPin weight="bold" />
           {storeAddress}
         </StoreAddress>
       </StoreInfo>
