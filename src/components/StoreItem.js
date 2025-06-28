@@ -1,9 +1,7 @@
 // src/components/StoreItem.js
 import React from 'react';
 import styled from 'styled-components';
-// import lithuaniaIcon from '../assets/Lithuania.png';
-// import latviaIcon from '../assets/Latvia.png'; 
-
+import { useTranslation } from 'react-i18next';
 
 const lithuaniaIcon = '/assets/Lithuania.png';
 const latviaIcon = '/assets/Latvia.png'; 
@@ -64,6 +62,9 @@ const CountryIcon = styled.img`
 `;
 
 const StoreItem = ({ store }) => {
+  const { i18n } = useTranslation();
+  const isEN = i18n.language === 'en';
+  
   if (!store) {
     return null;
   }
@@ -76,17 +77,17 @@ const StoreItem = ({ store }) => {
   const getMapsUrl = () => {
     return `https://maps.google.com/?q=${encodeURIComponent(storeAddress)}`;
   };
-
+  
   // Determine country icon
   const getCountryIcon = (country) => {
-    if (country && country.toLowerCase().includes('lithuania')) {
+    if (country && country.toLowerCase().includes('lt')) {
       return lithuaniaIcon;
-    } else if (country && country.toLowerCase().includes('latvia')) {
+    } else if (country && country.toLowerCase().includes('lv')) {
       return latviaIcon;
     }
     return null;
   };
-
+  
   const countryIcon = getCountryIcon(storeCountry);
 
   return (
@@ -94,7 +95,7 @@ const StoreItem = ({ store }) => {
       <StoreInfo>
         <StoreName>
           {storeName}
-          {countryIcon && (
+          {isEN && countryIcon && (
             <CountryIcon 
               src={countryIcon} 
               alt={storeCountry} 
