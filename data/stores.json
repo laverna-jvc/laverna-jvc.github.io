@@ -35,6 +35,11 @@
     "Address": "Savanorių pr. 241, Kaunas, Lithuania"
   },
   {
+    "Name": "Kaunas Muzikinis Garažas",
+    "Country": "lt",
+    "Address": "Armatūrininkų g.1, Kaunas, Lithuania"
+  },
+  {
     "Name": "Kėdainiai Enrikė",
     "Country": "lt",
     "Address": "J. Basanavičiaus g. 95D, Kėdainiai, Lithuania"
@@ -53,6 +58,11 @@
     "Name": "Kaunas Sirenitas",
     "Country": "lt",
     "Address": "Algirdo g. 2, Kaunas, Lithuania"
+  },
+  {
+    "Name": "Klaipėda Signalo centras",
+    "Country": "lt",
+    "Address": "Birutės g. 1, Klaipėda, Lithuania"
   },
   {
     "Name": "Utena Sirenitas",
