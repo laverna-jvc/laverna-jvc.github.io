@@ -1,7 +1,7 @@
 {
   "lt": {
     "address": "Taikos pr. 92C, Kaunas, 51180, Lietuva",
-    "email": "info@jvc.lt",
+    "email": "info@laverna.lt",
     "phone": "+370 616 33335",
     "heroImage": "/assets/hero.jpg",
     "instagramUrl": "https://instagram.com/jvc.lietuva",
@@ -9,7 +9,7 @@
   },
   "lv": {
     "address": "Taikos pr. 92C, Kaunas, 51180, Lietuva",
-    "email": "info@jvc.lv",
+    "email": "info@laverna.lt",
     "phone": "+370 616 33335",
     "heroImage": "/assets/hero.jpg",
     "instagramUrl": "https://instagram.com/jvc.latvija",
@@ -17,7 +17,7 @@
   },
   "en": {
     "address": "Europe",
-    "email": "info@jvc.lt",
+    "email": "info@laverna.lt",
     "phone": "+370 616 33335",
     "heroImage": "/assets/hero.jpg",
     "instagramUrl": "https://instagram.com/jvc.europe",
